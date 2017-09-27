@@ -36,6 +36,7 @@ do
 	grep ">" $file *.fasta | sort
 	echo
 	echo "########################################################"
-done
+done; > 2017-09-27_fasta_QC_log.txt
+
 
 
