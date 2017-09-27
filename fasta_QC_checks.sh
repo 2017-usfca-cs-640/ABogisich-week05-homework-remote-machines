@@ -24,11 +24,11 @@ do
 	echo
 	echo "First three lines:"
 	echo "------------------"
-	head -3 $file *.fasta
+	head -n 3 $file *.fasta
 	echo
 	echo "Last three lines:"
 	echo "-----------------"
-	tail -3 $file *.fasta
+	tail -n 3 $file *.fasta
 	echo
 	echo "Number of sequences:" $(grep ">" $file *.fasta | wc -l)
 	echo
@@ -37,4 +37,5 @@ do
 	echo
 	echo "########################################################"
 done
+
 
