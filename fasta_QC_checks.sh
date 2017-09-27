@@ -16,25 +16,25 @@ echo
 echo "#####################################################################"
 echo
 echo
-for  files in "$@"
+for files in "$@"
 do
-	echo "Output for"$file":"
+	echo "Output for" $file *.fasta
         echo
-	du -h $file
+	du -h $file *.fasta | cut -f -1
 	echo
 	echo "First three lines:"
 	echo "------------------"
-	head -3 $file
+	head -3 $file *.fasta
 	echo
 	echo "Last three lines:"
 	echo "-----------------"
-	tail -3 $file
+	tail -3 $file *.fasta
 	echo
-	echo "Number of sequences:" $(grep ">" $file | wc -l)
+	echo "Number of sequences:" $(grep ">" $file *.fasta | wc -l)
 	echo
 	echo "Sequence names (sorted):"
-	grep ">" $file | sort
+	grep ">" $file *.fasta | sort
 	echo
-	echo "#########################################################"
+	echo "########################################################"
 done
 
